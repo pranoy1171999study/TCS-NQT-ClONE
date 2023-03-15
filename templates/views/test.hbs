@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizPage</title>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="main-container">
+      
+        <div id="main-header">
+            <div id="exam-header">Tcs NQT</div>
+        </div>
+        <div id="Qi-menu">
+            <div id="exam-name">TCS NQT 2023</div>
+            <div class="dfs">
+                <div id="question-paper" class="dfs">
+                    <img src="img/doc.png" class="img20" title="see the question paper">
+                    Question Paper
+                </div>
+                <div id="view-instructions" class="dfs">
+                    <img src="img/i.png" class="img20" title="click here to go to instructions page" alt="">
+                    View Instructions
+                </div>
+            </div>
+        </div>
+        <div id="middle-container">
+            <div id="box-left">
+                <div id="paper-calc" class="dfs">
+                    <div id="paper" class="dfs">Aptitude
+                        <img src="img/i.png" class="img20 " alt="">
+                    </div>
+                    <img id="calculator" src="img/calc.png"></img>
+                    <!-- HTML  for calculator start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div id="draggable">
+                      <div id="d-head">
+                          <span>Normal Calculator</span>
+                          <button id="cross" class="fr">✖</button>
+                          <button id="minimize" class="fr">−</button>
+                      </div>
+                      <div id="d-body">
+                          <p class="fl rsbar" id="op1"></p>
+                          <p class="fl rsbar" id="op2"></p>
+                          <button class="c-btn l-btn" >MC</button>
+                          <button class="c-btn" >MR</button>
+                          <button class="c-btn" >MS</button>
+                          <button class="c-btn" >M+</button>
+                          <button class="c-btn" >M-</button>
+                          <button class="c-btn btn-2x l-btn red-btn" >←</button>
+                          <button class="c-btn red-btn" >C</button>
+                          <button class="c-btn red-btn" >+/-</button>
+                          <button class="c-btn" >√</button>
+                          <button class="c-btn l-btn  num" >7</button>
+                          <button class="c-btn num" >8</button>
+                          <button class="c-btn num" >9</button>
+                          <button class="c-btn" >/</button>
+                          <button class="c-btn" >%</button>
+                          <button class="c-btn l-btn  num" >4</button>
+                          <button class="c-btn num" >5</button>
+                          <button class="c-btn num" >6</button>
+                          <button class="c-btn" >*</button>
+                          <button class="c-btn" >1/x</button>
+                          <button class="c-btn l-btn num" >1</button>
+                          <button class="c-btn num" >2</button>
+                          <button class="c-btn num" >3</button>
+                          <button class="c-btn" >-</button>
+                          <button class="c-btn eq-btn" >=</button>
+                          <button class="c-btn btn-2x l-btn num" >0</button>
+                          <button class="c-btn" >.</button>
+                          <button class="c-btn" >+</button>
+                  
+                      </div>
+                      </div>
+                  <!-- HTML  for calculator end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        
+                </div>
+                <div id="sec-time" class="dfs pl10">
+                    Sections
+                    <div class="mr10">
+                        Time Left : <span>180:30</span>
+                    </div>
+                </div>
+                <div id="sections-menu" class="df">
+                    <div id="sec1" class="sections dfs">
+                        <span id="sectionName1" class="section-name"  >Section A MSQ</span>
+                        <img src="img/i.png" class="img20 pl10" alt="" title="click here to go to this section">
+                    </div>
+                    <div id="sec1" class="sections dfs">
+                        <span id="sectionName1" class="section-name" >Section A MSQ</span>
+                        <img src="img/i.png" class="img20 pl10" alt="" title="click here to go to this section">
+                    </div>
+                </div>
+                <div id="extra-info" class="dfs">
+                    <div id="qtype" class="pl10">Question Type :MSQ</div>
+                    <div id="additional-info" class="mr10">Marks for correct answer 1 | Negative Marks <span style="color: red;">1/3</span> </div>
+                </div>
+                <div id="questions-container">
+                    <div id="qno" >Question No. 1</div>
+                    <!-- question section -->
+                    <div id="question-options" >
+                      <!-- background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1'height='50px' width='120px'><text x='0' y='15' fill='red' font-size='20'>I love SVG!</text></svg>"); -->
+                      <div id="qbackground-container">
+                        <div id="qbackground">{{{replace}}}
+                         {{!-- 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5381359140145 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   5381359140145 <br><br> --}}
+                        </div>
+                      </div>
+                      <div id="upperBackground" class="rsbar">
+                        
+                        {{!-- <div id="question">
+                          Choose the correct options among the following ahsbjhhjahjahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                        </div>
+                        <div id="options">
+                          <input type="radio" name="" id=""><span>gavsgvav</span><br>
+                          <input type="radio" name="" id=""><span>vgvgvhgv</span><br>
+                          <input type="radio" name="" id=""><span>vvjn</span><br>
+                          <input type="radio" name="" id=""><span>bv</span>
+                        </div> --}}
+                      </div>
+                      
+                    </div>
+                    <!-- question section -->
+                </div>
+
+            </div>
+            <div id="box-right">
+                <div id="user-details" class="df">
+                    <!-- <div id="camera"></div> -->
+                    <video autoplay="true" id="camera">
+	
+                    </video>
+                    <div id="user">Pranoy Patra<br>{{{userid}}}</div>
+                </div>
+                <div id="responses">
+                    <div id="Question-desc"></div>
+                    
+                    <div class="Qrs-container">
+                        <div class="rb-sec-name">Section A MSQ</div>
+                        <div class="rb-sec-choose">Choose a Question</div>
+                        <div class="qblockContainer" id="qbc1">
+                            <div class="qblocks answered">1</div>
+                            <div class="qblocks notAnswered">2</div>
+                            <div class="qblocks mforReview">3</div>
+                            <div class="qblocks amforReview">4</div>
+                            <div class="qblocks">5</div>
+                            <div class="qblocks">6</div>
+                            <div class="qblocks">7</div>
+                            <div class="qblocks">8</div>
+                            <div class="qblocks">9</div>
+                            <div class="qblocks">10</div>
+                            <div class="qblocks">11</div>
+                            <div class="qblocks">12</div>
+                            <div class="qblocks">13</div>
+                            <div class="qblocks">14</div>
+                            <div class="qblocks">15</div>
+                            <div class="qblocks">16</div>
+                            <div class="qblocks">17</div>
+                            <div class="qblocks">18</div>
+                        </div>
+                    </div>
+                    {{!-- <div class="Qrs-container">
+                        <div class="rb-sec-name">Section B MCQ</div>
+                        <div class="rb-sec-choose">Choose a Question</div>
+                        <div class="qblockContainer ">
+                            <div class="qblocks answered">1</div>
+                            <div class="qblocks notAnswered">2</div>
+                            <div class="qblocks mforReview">3</div>
+                            <div class="qblocks amforReview">4</div>
+                            <div class="qblocks">5</div>
+                            <div class="qblocks">6</div>
+                            <div class="qblocks">7</div>
+                            <div class="qblocks">8</div>
+                            <div class="qblocks">9</div>
+                            <div class="qblocks">10</div>
+                            <div class="qblocks">11</div>
+                            <div class="qblocks">12</div>
+                            <div class="qblocks">13</div>
+                            <div class="qblocks">14</div>
+                            <div class="qblocks">15</div>
+                            <div class="qblocks">16</div>
+                            <div class="qblocks">17</div>
+                            <div class="qblocks">18</div>
+                        </div> 
+                    </div>--}}
+                    
+                </div>
+            </div>
+        </div>
+        <div id="lower-container" class="df">
+            <div id="lc-left" class="dfs">
+                <div class="df pl10">
+                    <button id="mfrn" class="button">Mark for Review &amp; Next</button>
+                    <button id="cr" class="button ml5">Clear Response</button>
+                </div>
+                <button id="sn" class="button lblue mr10">Save &amp; Next</button>
+            </div>
+            <div id="lc-right" class="df">
+                <button id="submitBtn" class="button lblue">Submit</button>
+            </div>
+        </div>
+    </div>
+    <!-- <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button> -->
+</body>
+ <script>
+    /* Get the element you want displayed in fullscreen mode (a video in this example): */
+    var elem = document.getElementById("main-container");
+    
+    /* When the openFullscreen() function is executed, open the video in fullscreen.
+    Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+    async function openFullscreen() {
+      if (elem.requestFullscreen) {
+        await elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    
+   
+    </script>
+    <script>
+      //camera script 
+      var main_container=document.getElementById("main-container");
+        var video = document.querySelector("#camera");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+              main_container.style.display="block";
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+              main_container.style.display="none";
+              alert("give camera access otherwise you can't give tjis test");
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
+    <script>
+        
+        
+        // script for calculator start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        $( "#draggable" ).draggable();
+        var str1="",str2="0";
+        var calculatorBtn=document.getElementById("calculator");
+        var draggable=document.getElementById("draggable");
+        var cross=document.getElementById("cross");
+        var minimize=document.getElementById("minimize");
+        var btns=document.querySelectorAll(".c-btn");
+        var op1=document.getElementById("op1");
+        var op2=document.getElementById("op2");
+            op2.innerText="0";
+        
+        draggable.style.display="none";
+        calculatorBtn.addEventListener("click",()=>{
+          draggable.style.display="block";
+        })
+        cross.addEventListener('click',()=>{
+          draggable.style.display="none";
+          op1.innerText="";
+          op2.innerText="";
+        })
+        minimize.addEventListener('click',()=>{
+          draggable.style.display="none";
+
+        })
+        // coustom function to calculate extra operators
+        var calculate=(str)=>{
+          var last=-1;
+          last=Math.max(str.lastIndexOf("sqrt"),str.lastIndexOf("reciproc"));
+          if(last>-1){
+            if(str.lastIndexOf("sqrt")==last)
+            {
+              var fpos=str.lastIndexOf("sqrt");
+              var lpos=0;
+              for(lpos=fpos+4;str[lpos]!=")";lpos++);
+              str=str.substring(0,fpos)+Math.sqrt(calculate(str.substring(fpos+5,lpos)))+str.substring(lpos+1);
+              //console.log(str);
+              str=calculate(str);
+            }
+            else if(str.lastIndexOf("reciproc")==last)
+            {
+              var fpos=str.lastIndexOf("reciproc");
+              var lpos=0;
+              for(lpos=fpos+4;str[lpos]!=")";lpos++);
+              str=str.substring(0,fpos)+"1/"+calculate(str.substring(fpos+9,lpos))+str.substring(lpos+1);
+              //console.log(str);
+              str=calculate(str);
+            }
+          }
+          
+          str=eval(str);
+          return str;
+        
+        }
+        
+        //coustom calculate end
+        var isOperator=(str)=>{
+          if(str=="+"||str=="-"||str=="*"||str=="/"||str=="%")
+            return true;
+          return false;
+        }
+        //console.log(calculate("sqrt(100)+reciproc(sqrt(4))"+"+reciproc(0.01+0.01)"));
+        
+        
+        
+        
+        Array.from(btns).forEach((btn)=>{
+          btn.addEventListener('click',(ev)=>{
+            var targetInnerText=ev.target.innerText;
+            if(ev.target.classList.contains("num")){
+              if(str2=="0"){
+                str2 = targetInnerText;
+              }
+              else {
+                str2 = str2+targetInnerText;
+              }
+              op2.innerText=str2;
+            }
+            else{
+              if(targetInnerText=="="){
+                if(str1[str1.length-1]in["+","-","*","/"])
+                  str2=op2.innerText;
+                  str1=str1+str2;
+                  var res=calculate(str1);
+                  op1.innerText=str1;
+                  op2.innerText=res;
+                  str1=res;
+                  str2="";
+        
+              }
+              else if(targetInnerText=="C"){
+                op1.innerText="";
+                op2.innerText="0"
+                str1="";
+                str2="0";
+              }
+              else if(targetInnerText=="←"){
+                if(str2.length>1){
+                  str2=str2.substring(0,str2.length-1);
+                  op2.innerText=str2;
+                }
+                else{
+                  str2="0";
+                  op2.innerText="0";
+                }
+              }else if(targetInnerText==""){
+        
+              }
+              else if(targetInnerText=="√"){
+                if(str1.length==0||isOperator(str1[str1.length-1]))
+                {
+                  str1=str1+"sqrt("+op2.innerText+")";
+                  op1.innerText=str1;
+                  str2="";
+                  op2.innerText=calculate(str1);
+                }
+                else{
+                  str1="sqrt("+str1+")";
+                  op1.innerText=str1;
+                  str2="";
+                  op2.innerText=calculate(str1);
+                }
+              }
+              else if(targetInnerText=="1/x"){
+                if(str1.length==0||isOperator(str1[str1.length-1]))
+                {
+                  str1=str1+"reciproc("+op2.innerText+")";
+                  op1.innerText=str1;
+                  str2="";
+                  op2.innerText=calculate(str1);
+                }
+                else{
+                  str1="reciproc("+str1+")";
+                  op1.innerText=str1;
+                  str2="";
+                  op2.innerText=calculate(str1);
+                }
+              }
+              else{
+                //for other operators
+                if(isOperator(targetInnerText))
+                {
+                  str1=str1+str2+targetInnerText;
+                  op1.innerText=str1;
+                  str2="";
+                }
+              }
+            }
+        
+          });
+        });
+        // script for calculator end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        </script>
+        <script src="js/main.js"></script>
+</html>

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400;8..30,900&family=Playfair+Display:ital,wght@1,900&family=Raleway:ital,wght@1,100&family=Varela+Round&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: rgb(199, 198, 198);
+    font-family: 'Varela Round', sans-serif;
+}
+/*style for index start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+form{
+    margin: auto;
+    height: fit-content;
+    width: 250px;
+    height: fit-content;
+}
+form select{
+    width: 100%;
+    height:25px;
+    margin-bottom: 5px;
+}
+form input[type=text]{
+    margin-bottom: 5px;
+    height: 25px;
+    width:calc(100% - 25px);
+    overflow: scroll;
+    /* border: 3px solid rgb(148, 147, 147); */
+    padding: 0px 10px;
+    outline: none;
+    font-size: 15px;
+}
+form input[type=submit]{
+    margin-top: 15px;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(171, 171, 171);
+}
+.rsbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .rsbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+/*style for index end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

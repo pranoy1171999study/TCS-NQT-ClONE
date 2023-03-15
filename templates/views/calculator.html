@@ -1,0 +1,289 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>draggable demo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /*style for calculator start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    .fr{
+        float: right;
+    }
+    .fl{
+      float: left;
+    }
+  #draggable {
+    width: 280px;
+    height: 350px;
+    background: #dadada;
+    /* font-family: 'Varela Round', sans-serif; */
+    top:30px;
+    left: 10px;
+    font-family: Arial;
+    overflow: hidden;
+    border-radius: 5px;
+    border-bottom: 6px solid #aaa;
+  }
+  #d-head{
+    height: 10%;
+    width: 100%;
+    background-color: #4286f3;
+    color: white;
+  }
+  #d-head span{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 250%;
+    padding-left: 10px;
+  }
+  #d-head button{
+    width: fit-content;
+    font-size: 20px;
+    margin-right: 5%;
+    line-height: 150%;
+    background-color: transparent;
+    color: white;
+  }
+  #d-body{
+    padding: 6%;
+    background-color: #dadada;
+  }
+  #d-body p{
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 25px;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px rgb(68, 68, 69);
+    border-radius: 3px;
+    padding: 0px 8px;
+    text-align: right;
+    margin-bottom: 4%;
+    font-family: 'Varela Round', sans-serif;
+    overflow-x:scroll;
+    scroll-behavior: smooth;
+  }
+  .c-btn{
+    float: left;
+    height: 25px;
+    width: 16.8%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    background-color: rgb(240, 240, 240);
+    border-radius: 4px;
+    box-shadow: 2px 2px rgb(99, 99, 99);
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+  }
+  .btn-2x{
+    width: 37.6%;
+    font-weight: bold;
+  }
+  .eq-btn{
+    float: right;
+    height: 60px;
+    font-weight: bold;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 20px;
+  }
+  .l-btn{
+    margin-left: 0;
+  }
+  .red-btn{
+    background-color:#e74c3c;
+    color: white;
+  }
+  /*style for calculator end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  </style>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+  <!-- HTML  for calculator start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id="draggable">
+    <div id="d-head">
+        <span>Normal Calculator</span>
+        <button id="cross" class="fr">✖</button>
+        <button class="fr">−</button>
+    </div>
+    <div id="d-body">
+        <p class="fl rsbar" id="op1"></p>
+        <p class="fl rsbar" id="op2"></p>
+        <button class="c-btn l-btn" >MC</button>
+        <button class="c-btn" >MR</button>
+        <button class="c-btn" >MS</button>
+        <button class="c-btn" >M+</button>
+        <button class="c-btn" >M-</button>
+        <button class="c-btn btn-2x l-btn red-btn" >←</button>
+        <button class="c-btn red-btn" >C</button>
+        <button class="c-btn red-btn" >+/-</button>
+        <button class="c-btn" >√</button>
+        <button class="c-btn l-btn  num" >7</button>
+        <button class="c-btn num" >8</button>
+        <button class="c-btn num" >9</button>
+        <button class="c-btn" >/</button>
+        <button class="c-btn" >%</button>
+        <button class="c-btn l-btn  num" >4</button>
+        <button class="c-btn num" >5</button>
+        <button class="c-btn num" >6</button>
+        <button class="c-btn" >*</button>
+        <button class="c-btn" >1/x</button>
+        <button class="c-btn l-btn num" >1</button>
+        <button class="c-btn num" >2</button>
+        <button class="c-btn num" >3</button>
+        <button class="c-btn" >-</button>
+        <button class="c-btn eq-btn" >=</button>
+        <button class="c-btn btn-2x l-btn num" >0</button>
+        <button class="c-btn" >.</button>
+        <button class="c-btn" >+</button>
+
+    </div>
+</div>
+ <!-- HTML  for calculator end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<script>
+// script for calculator start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$( "#draggable" ).draggable();
+var str1="",str2="0";
+var draggable=document.getElementById("draggable");
+var cross=document.getElementById("cross");
+var btns=document.querySelectorAll(".c-btn");
+var op1=document.getElementById("op1");
+var op2=document.getElementById("op2");
+    op2.innerText="0";
+
+cross.addEventListener('click',()=>{
+  draggable.style.display="none";
+})
+// coustom function to calculate extra operators
+var calculate=(str)=>{
+  var last=-1;
+  last=Math.max(str.lastIndexOf("sqrt"),str.lastIndexOf("reciproc"));
+  if(last>-1){
+    if(str.lastIndexOf("sqrt")==last)
+    {
+      var fpos=str.lastIndexOf("sqrt");
+      var lpos=0;
+      for(lpos=fpos+4;str[lpos]!=")";lpos++);
+      str=str.substring(0,fpos)+Math.sqrt(calculate(str.substring(fpos+5,lpos)))+str.substring(lpos+1);
+      console.log(str);
+      str=calculate(str);
+    }
+    else if(str.lastIndexOf("reciproc")==last)
+    {
+      var fpos=str.lastIndexOf("reciproc");
+      var lpos=0;
+      for(lpos=fpos+4;str[lpos]!=")";lpos++);
+      str=str.substring(0,fpos)+"1/"+calculate(str.substring(fpos+9,lpos))+str.substring(lpos+1);
+      console.log(str);
+      str=calculate(str);
+    }
+  }
+  
+  str=eval(str);
+  return str;
+
+}
+
+//coustom calculate end
+var isOperator=(str)=>{
+  if(str=="+"||str=="-"||str=="*"||str=="/"||str=="%")
+    return true;
+  return false;
+}
+console.log(calculate("sqrt(100)+reciproc(sqrt(4))"+"+reciproc(0.01+0.01)"));
+
+
+
+
+Array.from(btns).forEach((btn)=>{
+  btn.addEventListener('click',(ev)=>{
+    var targetInnerText=ev.target.innerText;
+    if(ev.target.classList.contains("num")){
+      if(str2=="0"){
+        str2 = targetInnerText;
+      }
+      else {
+        str2 = str2+targetInnerText;
+      }
+      op2.innerText=str2;
+    }
+    else{
+      if(targetInnerText=="="){
+        if(str1[str1.length-1]in["+","-","*","/"])
+          str2=op2.innerText;
+          str1=str1+str2;
+          var res=calculate(str1);
+          op1.innerText=str1;
+          op2.innerText=res;
+          str1=res;
+          str2="";
+
+      }
+      else if(targetInnerText=="C"){
+        op1.innerText="";
+        op2.innerText="0"
+        str1="";
+        str2="0";
+      }
+      else if(targetInnerText=="←"){
+        if(str2.length>1){
+          str2=str2.substring(0,str2.length-1);
+          op2.innerText=str2;
+        }
+        else{
+          str2="0";
+          op2.innerText="0";
+        }
+      }else if(targetInnerText==""){
+
+      }
+      else if(targetInnerText=="√"){
+        if(str1.length==0||isOperator(str1[str1.length-1]))
+        {
+          str1=str1+"sqrt("+op2.innerText+")";
+          op1.innerText=str1;
+          str2="";
+          op2.innerText=calculate(str1);
+        }
+        else{
+          str1="sqrt("+str1+")";
+          op1.innerText=str1;
+          str2="";
+          op2.innerText=calculate(str1);
+        }
+      }
+      else if(targetInnerText=="1/x"){
+        if(str1.length==0||isOperator(str1[str1.length-1]))
+        {
+          str1=str1+"reciproc("+op2.innerText+")";
+          op1.innerText=str1;
+          str2="";
+          op2.innerText=calculate(str1);
+        }
+        else{
+          str1="reciproc("+str1+")";
+          op1.innerText=str1;
+          str2="";
+          op2.innerText=calculate(str1);
+        }
+      }
+      else{
+        //for other operators
+        if(isOperator(targetInnerText))
+        {
+          str1=str1+str2+targetInnerText;
+          op1.innerText=str1;
+          str2="";
+        }
+      }
+    }
+
+  });
+});
+// script for calculator end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</script>
+</body>
+</html>
